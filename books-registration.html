@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Store - Member Registration</title>
+    <style>
+      :root {
+        --maroon: #7c2d12;
+        --gold: #d97706;
+        --cream: #fdf6ec;
+        --card: #fffaf3;
+        --text-dark: #3f2d1c;
+        --text-muted: #8a7460;
+        --border: #e8d9c3;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        background: var(--cream);
+        color: var(--text-dark);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        padding: 50px 16px;
+      }
+      .wrap {
+        width: 100%;
+        max-width: 760px;
+        background: var(--card);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 15px 45px rgba(124, 45, 18, 0.12);
+        animation: rise 0.5s ease;
+        border: 1px solid var(--border);
+      }
+      @keyframes rise {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .banner {
+        position: relative;
+        padding: 36px 30px;
+        background: linear-gradient(
+          120deg,
+          var(--maroon),
+          #9a3412 60%,
+          var(--gold)
+        );
+        color: #fff8ee;
+        overflow: hidden;
+      }
+      .banner::before {
+        content: "📚";
+        position: absolute;
+        font-size: 130px;
+        opacity: 0.15;
+        right: -10px;
+        top: -20px;
+      }
+      .banner h1 {
+        margin: 0;
+        font-size: 25px;
+        letter-spacing: 0.4px;
+      }
+      .banner p {
+        margin: 6px 0 0;
+        font-size: 13px;
+        opacity: 0.9;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      form {
+        padding: 34px 30px 38px;
+      }
+      .section-title {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: var(--gold);
+        font-weight: 700;
+        margin: 24px 0 14px;
+        font-family: "Segoe UI", sans-serif;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 8px;
+      }
+      .section-title:first-of-type {
+        margin-top: 0;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      .full {
+        grid-column: 1 / -1;
+      }
+      .field {
+        display: flex;
+        flex-direction: column;
+      }
+      label {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-bottom: 6px;
+        font-weight: 600;
+        font-family: "Segoe UI", sans-serif;
+      }
+      input,
+      select {
+        background: var(--cream);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 10px 13px;
+        color: var(--text-dark);
+        font-size: 14px;
+        font-family: "Segoe UI", sans-serif;
+        transition:
+          border-color 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+      input:focus,
+      select:focus {
+        outline: none;
+        border-color: var(--gold);
+        box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.15);
+        background: #fff;
+      }
+      .radio-row {
+        display: flex;
+        gap: 12px;
+        margin-top: 4px;
+        flex-wrap: wrap;
+        font-family: "Segoe UI", sans-serif;
+      }
+      .radio-pill {
+        position: relative;
+      }
+      .radio-pill input {
+        position: absolute;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        margin: 0;
+      }
+      .radio-pill span {
+        display: inline-block;
+        padding: 7px 15px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        font-size: 13px;
+        color: var(--text-muted);
+        transition: all 0.25s ease;
+      }
+      .radio-pill input:checked + span {
+        background: var(--maroon);
+        border-color: var(--maroon);
+        color: #fff;
+        font-weight: 600;
+      }
+      .pw-row {
+        display: flex;
+        gap: 8px;
+      }
+      .pw-row input {
+        flex: 1;
+      }
+      .eye-btn {
+        background: var(--maroon);
+        border: none;
+        color: #fff8ee;
+        border-radius: 6px;
+        padding: 0 14px;
+        cursor: pointer;
+        font-size: 12px;
+        font-family: "Segoe UI", sans-serif;
+        transition: background 0.2s ease;
+      }
+      .eye-btn:hover {
+        background: var(--gold);
+      }
+      .hint {
+        font-size: 11px;
+        color: var(--text-muted);
+        margin-top: 5px;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      .submit {
+        margin-top: 28px;
+        width: 100%;
+        padding: 14px;
+        border: none;
+        border-radius: 8px;
+        background: linear-gradient(120deg, var(--maroon), #9a3412);
+        color: #fff8ee;
+        font-weight: 700;
+        font-size: 15px;
+        letter-spacing: 0.4px;
+        cursor: pointer;
+        font-family: "Segoe UI", sans-serif;
+        transition:
+          transform 0.15s ease,
+          box-shadow 0.25s ease;
+      }
+      .submit:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 24px rgba(124, 45, 18, 0.25);
+      }
+      .submit:active {
+        transform: scale(0.98);
+      }
+      .foot-link {
+        text-align: center;
+        margin-top: 16px;
+        font-size: 12px;
+        color: var(--text-muted);
+        font-family: "Segoe UI", sans-serif;
+      }
+      .foot-link a {
+        color: var(--gold);
+        text-decoration: none;
+        font-weight: 700;
+      }
+
+      @media (max-width: 600px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+        .full {
+          grid-column: 1;
+        }
+        form {
+          padding: 26px 20px 32px;
+        }
+        .banner {
+          padding: 28px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="banner">
+        <h1>Book Store Membership</h1>
+        <p>Excellence Academy — Create your reader account</p>
+      </div>
+
+      <form
+        action="books-login.html"
+        method="POST"
+        target="_blank"
+        onsubmit="return validatePasswords();"
+      >
+        <div class="section-title">Member Info</div>
+        <div class="grid">
+          <div class="field">
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" name="first_name" placeholder="Enter First Name" required />
+          </div>
+          <div class="field">
+            <label for="last-name">Last Name</label>
+            <input type="text" placeholder="last-name" name="last_name" required />
+          </div>
+          <div class="field">
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob" required />
+          </div>
+          <div class="field">
+            <label>Membership Type</label>
+            <div class="radio-row">
+              <label class="radio-pill"
+                ><input
+                  type="radio"
+                  name="member_type"
+                  value="student"
+                  required
+                /><span>Student</span></label
+              >
+              <label class="radio-pill"
+                ><input type="radio" name="member_type" value="staff" /><span
+                  >Staff</span
+                ></label
+              >
+              <label class="radio-pill"
+                ><input type="radio" name="member_type" value="guest" /><span
+                  >Guest</span
+                ></label
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="section-title">Reading Preferences</div>
+        <div class="grid">
+          <div class="field">
+            <label for="grade">Grade / Class</label>
+            <select id="grade" name="grade" required>
+              <option value="" disabled selected>Select grade</option>
+              <option value="grade-9">Grade 9</option>
+              <option value="grade-10">Grade 10</option>
+              <option value="grade-11">Grade 11</option>
+              <option value="grade-12">Grade 12</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="genre">Favorite Genre</label>
+            <select id="genre" name="genre">
+              <option value="" disabled selected>Choose genre</option>
+              <option value="fiction">Fiction</option>
+              <option value="science">Science</option>
+              <option value="history">History</option>
+              <option value="biography">Biography</option>
+              <option value="poetry">Poetry</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="card-type">Borrowing Card</label>
+            <select id="card-type" name="card_type">
+              <option value="" disabled selected>Select card type</option>
+              <option value="standard">Standard (3 books / 2 weeks)</option>
+              <option value="premium">Premium (6 books / 4 weeks)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="section-title">Contact</div>
+        <div class="grid">
+          <div class="field full">
+            <label for="guardian">Parent / Guardian Name</label>
+            <input type="text" id="guardian" name="guardian_name" required />
+          </div>
+          <div class="field">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="field">
+            <label for="phone">Phone Number</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="0300-1234567"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="section-title">Set Password</div>
+        <div class="grid">
+          <div class="field">
+            <label for="password">Password</label>
+            <div class="pw-row">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                minlength="8"
+                required
+              />
+              <button
+                type="button"
+                class="eye-btn"
+                onclick="togglePw('password', this)"
+              >
+                Show
+              </button>
+            </div>
+            <div class="hint">At least 8 characters</div>
+          </div>
+          <div class="field">
+            <label for="confirm-password">Confirm Password</label>
+            <div class="pw-row">
+              <input
+                type="password"
+                id="confirm-password"
+                name="confirm_password"
+                required
+              />
+              <button
+                type="button"
+                class="eye-btn"
+                onclick="togglePw('confirm-password', this)"
+              >
+                Show
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="submit">Create Member Account</button>
+        <div class="foot-link">
+          Already a member? <a href="books-login.html">Sign in here</a>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      function validatePasswords() {
+        const p = document.getElementById("password").value;
+        const c = document.getElementById("confirm-password").value;
+        if (p !== c) {
+          alert("Passwords do not match. Please check and try again.");
+          return false;
+        }
+        return true;
+      }
+      function togglePw(id, btn) {
+        const input = document.getElementById(id);
+        if (input.type === "password") {
+          input.type = "text";
+          btn.textContent = "Hide";
+        } else {
+          input.type = "password";
+          btn.textContent = "Show";
+        }
+      }
+    </script>
+  </body>
+</html>
