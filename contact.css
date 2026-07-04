@@ -224,6 +224,9 @@ header {
 .info-box a{
 
     color:#94b4ca;
+    display: flex;
+    align-items: center;
+    
     text-decoration: none;
     word-break:break-word;
 
