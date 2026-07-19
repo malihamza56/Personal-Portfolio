@@ -6,12 +6,12 @@
 
 <p align="center">
 
-<img src="https://img.shields.io/github/license/malihamza56/Portfolio?style=for-the-badge" />
-<img src="https://img.shields.io/github/stars/malihamza56/Portfolio?style=for-the-badge" />
-<img src="https://img.shields.io/github/forks/malihamza56/Portfolio?style=for-the-badge" />
-<img src="https://img.shields.io/github/repo-size/malihamza56/Portfolio?style=for-the-badge" />
-<img src="https://img.shields.io/github/last-commit/malihamza56/Portfolio?style=for-the-badge" />
-<img src="https://img.shields.io/github/languages/top/malihamza56/Portfolio?style=for-the-badge" />
+<img src="https://img.shields.io/github/license/malihamza56/Personal-Portfolio?style=for-the-badge" />
+<img src="https://img.shields.io/github/stars/malihamza56/Personal-Portfolio?style=for-the-badge" />
+<img src="https://img.shields.io/github/forks/malihamza56/Personal-Portfolio?style=for-the-badge" />
+<img src="https://img.shields.io/github/repo-size/malihamza56/Personal-Portfolio?style=for-the-badge" />
+<img src="https://img.shields.io/github/last-commit/malihamza56/Personal-Portfolio?style=for-the-badge" />
+<img src="https://img.shields.io/github/languages/top/malihamza56/Personal-Portfolio?style=for-the-badge" />
 
 </p>
 
@@ -21,7 +21,7 @@
 <img src="https://img.shields.io/badge/🌐_Live_Demo-Visit_Website-blue?style=for-the-badge"/>
 </a>
 
-<a href="https://github.com/YOUR_USERNAME/Portfolio">
+<a href="https://github.com/malihamza56/Personal-Portfolio">
 <img src="https://img.shields.io/badge/📂_Repository-GitHub-black?style=for-the-badge"/>
 </a>
 
@@ -123,34 +123,6 @@ The website works perfectly across:
 
 ---
 
-# 📂 Project Structure
-
-```
-Portfolio/
-│
-├── assets/
-│   ├── images/
-│   ├── icons/
-│   └── fonts/
-│
-├── css/
-│   ├── style.css
-│   └── responsive.css
-│
-├── js/
-│   └── script.js
-│
-├── pages/
-│
-├── index.html
-│
-├── README.md
-│
-└── LICENSE
-```
-
----
-
 # 🖼 Website Preview
 
 ```
@@ -164,13 +136,6 @@ screenshots/
 ├── projects.png
 └── contact.png
 ```
-
-Example:
-
-<img src="screenshots/home.png" width="100%">
-
----
-
 # 🚀 Getting Started
 
 Clone the repository
