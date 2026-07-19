@@ -6,12 +6,12 @@
 
 <p align="center">
 
-<img src="https://img.shields.io/github/license/YOUR_USERNAME/Portfolio?style=for-the-badge" />
-<img src="https://img.shields.io/github/stars/YOUR_USERNAME/Portfolio?style=for-the-badge" />
-<img src="https://img.shields.io/github/forks/YOUR_USERNAME/Portfolio?style=for-the-badge" />
-<img src="https://img.shields.io/github/repo-size/YOUR_USERNAME/Portfolio?style=for-the-badge" />
-<img src="https://img.shields.io/github/last-commit/YOUR_USERNAME/Portfolio?style=for-the-badge" />
-<img src="https://img.shields.io/github/languages/top/YOUR_USERNAME/Portfolio?style=for-the-badge" />
+<img src="https://img.shields.io/github/license/malihamza56/Portfolio?style=for-the-badge" />
+<img src="https://img.shields.io/github/stars/malihamza56/Portfolio?style=for-the-badge" />
+<img src="https://img.shields.io/github/forks/malihamza56/Portfolio?style=for-the-badge" />
+<img src="https://img.shields.io/github/repo-size/malihamza56/Portfolio?style=for-the-badge" />
+<img src="https://img.shields.io/github/last-commit/malihamza56/Portfolio?style=for-the-badge" />
+<img src="https://img.shields.io/github/languages/top/malihamza56/Portfolio?style=for-the-badge" />
 
 </p>
 
