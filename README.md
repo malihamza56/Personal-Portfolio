@@ -17,7 +17,7 @@
 
 <p align="center">
 
-<a href="https://malihamza56.github.io/Portfolio/">
+<a href="https://malihamza56.github.io/Personal-Portfolio/">
 <img src="https://img.shields.io/badge/🌐_Live_Demo-Visit_Website-blue?style=for-the-badge"/>
 </a>
 
